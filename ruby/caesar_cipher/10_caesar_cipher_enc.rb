@@ -1,6 +1,6 @@
 require "readline"
 
-# ok! but maybe i can use "mod" to check 26over or not
+# ok! mod is working.
 
 key = 0
 plaintext = ""
@@ -30,11 +30,11 @@ while len - 1 >= ctr1 do
 	while ctr2 <= 25 do
 #		str3 << alph[ctr2.to_i + key.to_i] if alph[ctr2] == str2
 		if alph[ctr2] == str2
-			ctr3 = ctr2.to_i + key.to_i
-			if 26 <= ctr3
-				ctr3 = ctr3 - 26
-			end
-		str3 << alph[ctr3]
+			ctr3 = (ctr2.to_i + key.to_i) % 26
+#			if 26 <= ctr3
+#				ctr3 = ctr3 - 26
+#			end
+			str3 << alph[ctr3]
 		end
 		ctr2 += 1
 	end

@@ -15,11 +15,24 @@ ctr3 = 0 # shift alph index
 
 puts
 key = Readline.readline("type a number in 0 to 9. > ")
-puts '  your key is "' + key + '".'
+if key =~ /^[0-9]+$/
+	puts '  your key is "' + key + '".'
+else
+	puts '  type a number! See you! '
+	sleep(2)
+	exit(10)
+end
 
 puts
 plaintext = Readline.readline("type 3 letters in a to z. > ")
-puts '  your plaintext is "' + plaintext + '".'
+if plaintext =~ /^[a-z]+$/
+	puts '  your plaintext is "' + plaintext + '".'
+else
+	puts '  type 3 letters! See you! '
+	sleep(2)
+	exit(11)
+end
+
 str1 = plaintext.split ''
 len = plaintext.length
 
@@ -30,9 +43,6 @@ while len - 1 >= ctr1 do
 #		str3 << alph[ctr2.to_i + key.to_i] if alph[ctr2] == str2
 		if alph[ctr2] == str2
 			ctr3 = (ctr2.to_i + key.to_i) % 26
-#			if 26 <= ctr3
-#				ctr3 = ctr3 - 26
-#			end
 			str3 << alph[ctr3]
 		end
 		ctr2 += 1
@@ -41,7 +51,6 @@ while len - 1 >= ctr1 do
 	ctr1 += 1
 end
 
-puts
 ciphertext = 'your ciphertext is "' + str3.join + '".'
 puts ciphertext
 

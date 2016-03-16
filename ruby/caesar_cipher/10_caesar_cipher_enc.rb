@@ -1,26 +1,25 @@
 require "readline"
 
-# ok! mod is working.
-
-key = 0
-plaintext = ""
-ciphertext = ""
-str1 = []
-len = 0
-ctr1 = 0
-str2 = ""
+# variable
+key = 0 # key to shift
+plaintext = "" # plaintext
+ciphertext = "" # ciphertext
+str1 = [] # work strings to get letter array
+len = 0 # plaintext's length
+ctr1 = 0 # roop counter to the length
+str2 = "" # get each letter
 alph = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-ctr2 = 0
-str3 = []
-ctr3 = 0
+ctr2 = 0 # roop counter for alph check
+str3 = [] # work cipher array
+ctr3 = 0 # shift alph index
 
 puts
 key = Readline.readline("type a number in 0 to 9. > ")
-puts 'your key is "' + key + '"'
+puts '  your key is "' + key + '".'
 
 puts
 plaintext = Readline.readline("type 3 letters in a to z. > ")
-puts 'your plaintext is "' + plaintext + '"'
+puts '  your plaintext is "' + plaintext + '".'
 str1 = plaintext.split ''
 len = plaintext.length
 
@@ -43,7 +42,7 @@ while len - 1 >= ctr1 do
 end
 
 puts
-ciphertext = 'your ciphertext is "' + str3.join + '"'
+ciphertext = 'your ciphertext is "' + str3.join + '".'
 puts ciphertext
 
 puts
